@@ -1,0 +1,23 @@
+<div id="app">
+  <v-app id="tracker">
+    <v-simple-table dense>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th v-for="title in titles" 
+                class="text-left">{{ title }}</th>
+          </tr>
+        </thead>
+        <tbody>
+            <item-row v-for="item in items" v-bind:item="item" v-bind:key="item.name"></>
+        </tbody>
+      </template>
+    </v-simple-table>
+    <input v-model="newtask"></input><v-btn on:click="add()">Add</v-btn>
+  </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.4.5/dist/vuetify.min.js"></script>
+<script src="app.js"></script>
